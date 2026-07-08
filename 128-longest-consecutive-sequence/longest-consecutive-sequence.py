@@ -4,16 +4,13 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        num_set = set(nums)
-        longest = 0
+        numset = set(nums)
+        res = 0
 
-        for n in num_set:
-            if n - 1 not in num_set:
-                length = 1
-
-                while n + length in num_set:
-                    length += 1
-                
-                longest = max(longest, length)
-        
-        return longest
+        for num in numset:
+            if num-1 not in numset:
+                count = 0
+                while num+count in numset:
+                    count+=1
+                res = max(count, res)
+        return res
