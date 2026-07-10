@@ -10,5 +10,5 @@ class Solution(object):
             a[num] += 1
 
         for key, val in a.items():
-            if val > len(nums)/2:
+            if val > len(nums)//2:
                 return key
