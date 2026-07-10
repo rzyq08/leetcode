@@ -4,8 +4,11 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        a = Counter(nums)
+        a = defaultdict(int)
 
-        for key,val in a.items():
-            if val > (len(nums)/2):
+        for num in nums:
+            a[num] += 1
+
+        for key, val in a.items():
+            if val > len(nums)/2:
                 return key
