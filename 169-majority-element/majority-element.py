@@ -4,11 +4,16 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        a = defaultdict(int)
+        
+        count = 0
+        candidate = 0
 
-        for num in nums:
-            a[num] += 1
-
-        for key, val in a.items():
-            if val > len(nums)//2:
-                return key
+        for i in range(len(nums)):
+            if count == 0:
+                candidate = nums[i]
+                count +=1
+            elif nums[i] == candidate:
+                count+=1
+            else:
+                count-=1
+        return candidate
