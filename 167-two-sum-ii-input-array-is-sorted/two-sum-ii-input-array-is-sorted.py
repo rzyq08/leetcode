@@ -12,7 +12,5 @@ class Solution(object):
             sm = numbers[l] + numbers[r]
             if sm == target:
                 return [l+1, r+1]
-            elif sm > target:
-                r-=1
-            else:
-                l+=1
+            r -= sm > target
+            l += sm < target
