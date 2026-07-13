@@ -5,10 +5,14 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        seen = {}
-        for i, num in enumerate(numbers):
-            pair = target - num
-            if pair in seen:
-                return [seen[pair]+1, i+1]
-
-            seen[num] = i
+        length = len(numbers)
+        l = 0
+        r = length - 1
+        while l < r:
+            sm = numbers[l] + numbers[r]
+            if sm == target:
+                return [l+1, r+1]
+            elif sm > target:
+                r-=1
+            elif sm < target:
+                l+=1
