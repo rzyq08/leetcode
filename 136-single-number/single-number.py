@@ -4,9 +4,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-
-        hashm = Counter(nums)
-        
-        for x in hashm:
-            if hashm[x] == 1:
-                return x
+        xor = 0
+        for num in nums:
+            xor ^= num
+        return xor
