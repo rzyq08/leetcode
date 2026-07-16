@@ -9,6 +9,6 @@ class Solution(object):
         for num in nums:
             hashm[num] = hashm.get(num, 0) + 1
         
-        for key, val in hashm.items():
-            if val == 1:
-                return key
+        for x in hashm:
+            if hashm[x] == 1:
+                return x
