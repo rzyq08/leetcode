@@ -5,9 +5,7 @@ class Solution(object):
         :rtype: int
         """
 
-        hashm = {}
-        for num in nums:
-            hashm[num] = hashm.get(num, 0) + 1
+        hashm = Counter(nums)
         
         for x in hashm:
             if hashm[x] == 1:
