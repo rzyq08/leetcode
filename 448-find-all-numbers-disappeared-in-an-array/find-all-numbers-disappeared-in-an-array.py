@@ -4,5 +4,9 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        hashs = set(nums)
-        return [i for i in range(1, len(nums)+1) if i not in hashs]
+        for i in range(len(nums)):
+            now = abs(nums[i]) - 1
+            if nums[now] > 0:
+                nums[now] *= -1
+        
+        return [i+1 for i in range(len(nums)) if nums[i] > 0]
