@@ -4,8 +4,10 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        mx = 0
-        for i in range(1, min(nums)+1):
-            if max(nums) % i == 0 and min(nums) % i == 0:
-                mx = max(mx, i)
+        mn = abs(min(nums))
+        mx = abs(max(nums))
+
+        while mn!=0:
+            mx, mn = mn, mx%mn
+        
         return mx
