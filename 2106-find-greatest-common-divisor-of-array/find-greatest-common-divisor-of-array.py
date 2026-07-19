@@ -9,5 +9,4 @@ class Solution(object):
 
         while mn!=0:
             mx, mn = mn, mx%mn
-        
         return mx
