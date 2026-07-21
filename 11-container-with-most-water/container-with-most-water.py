@@ -9,7 +9,7 @@ class Solution(object):
         mx = 0
         while l<r:
             mx = max(mx, (min(height[l], height[r])*(r-l)))
-            if height[l]<=height[r]:
+            if height[l]<height[r]:
                 l+=1
             else:
                 r-=1
