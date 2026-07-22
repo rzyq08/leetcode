@@ -5,4 +5,4 @@ class Solution(object):
         :rtype: bool
         """
 
-        return n > 0 and 3**19 % n == 0
+        return n > 0 and 1162261467 % n == 0
