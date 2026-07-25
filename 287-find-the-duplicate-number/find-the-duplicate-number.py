@@ -4,7 +4,9 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        hashm = Counter(nums)
+        hashm = {}
+        for num in nums:
+            hashm[num] = hashm.get(num, 0) + 1
         
         for key, val in hashm.items():
             if val > 1:
