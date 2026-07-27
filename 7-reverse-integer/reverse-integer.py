@@ -16,5 +16,7 @@ class Solution(object):
 
         if res > 2**31 - 1:
             return 0
-    
-        return res*-1 if isneg == True else res
+        
+        if isneg == True:
+            res*=-1
+        return res
