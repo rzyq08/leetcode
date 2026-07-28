@@ -5,16 +5,16 @@ class Solution(object):
         :rtype: List[int]
         """
         length = len(nums)
-        result = [1]*length
+        prefix = [1]*(length+1)
+        postfix = [1]*(length+1)
 
-        prefix = 1
-        for i in range(length):
-            result[i] = prefix
-            prefix *= nums[i]
-        
-        postfix = 1
+        prefix[1] = nums[0]
+        for i in range(1, length):
+            prefix[i+1] = prefix[i]*nums[i]
         for i in range(length-1, -1, -1):
-            result[i] *= postfix
-            postfix *= nums[i]
+            postfix[i] = nums[i]*postfix[i+1]
         
-        return result
+        res = [1]*length
+        for i in range(1, length+1):
+            res[i-1] = prefix[i-1]*postfix[i]
+        return res
