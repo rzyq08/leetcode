@@ -4,13 +4,12 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        numset = set(nums)
-        res = 0
-
-        for num in numset:
-            if num-1 not in numset:
+        num = set(nums)
+        mx = 0
+        for nm in num:
+            if nm-1 not in num:
                 count = 0
-                while num+count in numset:
+                while nm+count in num:
                     count+=1
-                res = max(count, res)
-        return res
+                mx = max(mx, count)
+        return mx
