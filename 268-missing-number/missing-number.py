@@ -5,6 +5,4 @@ class Solution(object):
         :rtype: int
         """
         length = len(nums)
-        sm = (length*(length+1))//2
-        sm1 = sum(nums)
-        return sm-sm1
+        return ((length*(length+1))//2)-sum(nums)
