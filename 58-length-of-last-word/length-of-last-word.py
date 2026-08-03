@@ -4,6 +4,13 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        s = s.split()
-        res = s[len(s)-1]
+        s = s.strip()
+        res = ""
+        i = 0
+        while i < len(s):
+            if s[i] == ' ':
+                res = ""
+            else:
+                res += s[i]
+            i+=1
         return len(res)
