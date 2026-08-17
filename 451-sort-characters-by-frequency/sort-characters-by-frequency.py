@@ -4,9 +4,7 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        count = {}
-        for let in s:
-            count[let] = count.get(let, 0) + 1
+        count = Counter(s)
         
         buckets = [[] for _ in range(len(s)+1)]
         for key,val in count.items():
