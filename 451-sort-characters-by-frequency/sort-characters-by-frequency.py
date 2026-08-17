@@ -12,8 +12,8 @@ class Solution(object):
         for key,val in count.items():
             buckets[val].append(key*val)
 
-        res = ''
+        res = []
         for i in range(len(buckets)-1, -1, -1):
             for item in buckets[i]:
-                res+=item
-        return res
+                res.append(item)
+        return ''.join(res)
