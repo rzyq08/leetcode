@@ -7,13 +7,13 @@ class Solution(object):
         count = {}
         for let in s:
             count[let] = count.get(let, 0) + 1
+        
         buckets = [[] for _ in range(len(s)+1)]
-
         for key,val in count.items():
-            buckets[val].append(key*val)
+            buckets[val].append(key)
 
         res = []
-        for i in range(len(buckets)-1, -1, -1):
+        for i in range(len(buckets)-1, 0, -1):
             for item in buckets[i]:
-                res.append(item)
+                res.append(item*i)
         return ''.join(res)
