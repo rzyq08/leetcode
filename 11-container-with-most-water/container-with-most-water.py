@@ -4,7 +4,7 @@ class Solution(object):
         :type height: List[int]
         :rtype: int
         """
-        l,r=0,len(height)-1
+        l, r = 0, len(height)-1
         mx = 0
         while l<r:
             mx = max(mx, min(height[l], height[r])*(r-l))
