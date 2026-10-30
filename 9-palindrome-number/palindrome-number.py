@@ -4,13 +4,12 @@ class Solution(object):
         :type x: int
         :rtype: bool
         """
-        n = str(x)
 
-        l, r = 0, len(n)-1
-
-        while l<r:
-            if n[l]!=n[r]:
+        try:
+            strx = str(x)
+            if x == int(strx[::-1]):
+                return True
+            else:
                 return False
-            l+=1
-            r-=1
-        return True
+        except ValueError:
+            return False
